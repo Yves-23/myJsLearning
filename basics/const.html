@@ -1,0 +1,246 @@
+<html>
+    <head>
+        <title>
+                LEARN JS
+        </title>
+    </head>
+
+    <!-- <div style="position: fixed; right: 0; bottom: 0;" >
+        <iframe width="350" height="450" allow="microphone;" 
+        src="https://console.dialogflow.com/api-client/demo/embedded/24fc57ce-154f-4595-b836-ff7826e0545f"></iframe>
+    </div> -->
+
+    <P id="ngabo"></P>
+
+    <P id="simba"></P>
+    <P id="yves"></P>
+    <script>
+       // const myArray = [30, 40, 11];
+        const myArray = ["tata", "titi", "toto"];
+        
+        let space = "";
+        let txt = "";
+
+        myArray.forEach(myFunction);
+        myArray.forEach(myFunction1);
+
+        document.getElementById("simba").innerHTML = space;
+
+        document.getElementById("yves").innerHTML = txt;
+
+        document.getElementById("ngabo").innerHTML = myArray;
+
+
+        function myFunction1 (value, index, array){
+            txt += index + "<br>"
+        }
+
+
+        function myFunction(value, index, array){
+            space += value + "<br>";
+            //txt += index + "<br>"
+        }
+
+    </script>
+
+    <p id= "demo"></p>
+
+    <script>
+        const myFilter = [90, 100, 30, 40, 190, 280, 20];
+        const over100 = myFilter.filter(myFilterFunction);
+        document.getElementById("demo").innerHTML = over100;
+
+        function myFilterFunction (value, index, array){
+           return value >= 100
+        }
+    </script>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+
+    <script>
+        let nameSort = ["PATRICK", "DIAVE", "PETER", "ALINE"];
+        function maSort(){
+            //let lo = nameSort.toLowerCase();
+            nameSort.sort();
+            document.getElementById("demo2").innerHTML = nameSort;
+        }
+        maSort();
+        
+    </script>
+
+    <script>
+        const mySort = [20, 40, 70, 10];
+        mySort.sort();
+        document.getElementById("demo1").innerHTML = mySort;
+    </script>
+
+    <p id="demo3"></p>
+
+    <script>
+        const myFind = [21, 30, 12, 22, 18, 38];
+        let myFind1 = myFind.find(myFind2);
+        document.getElementById("demo3").innerHTML= myFind1;
+        function myFind2(value, index, array){
+            return value > 21 
+        }
+    </script>
+
+
+    <P id="include"></P>
+    
+    <script>
+        const myInclu = ["Peter", "Innocent", "JMV", "Brian"];
+        const inclu = myInclu.includes("Innocent");
+        document.getElementById("include").innerHTML = inclu;
+    </script>
+
+    <button onclick="document.getElementById('rando').innerHTML = randomNumbers()">Click Here</button>
+    <button onclick="randNumbers(200, 20)">Click Here</button>
+
+    <p id="rando" ></p>
+    <p id="rand"></p>
+    <p id="date"></p>
+
+
+    <script>
+        function randomNumbers(){
+            let x = Math.floor(Math.random() * 100);
+            return x
+        }
+
+        function randNumbers(high, low){
+            document.getElementById('rand').innerHTML = Math.floor(Math.random() * (high-low));
+        }
+
+        const d = new Date();
+        const da = d.getFullYear();       
+        document.getElementById("date").innerHTML = da; 
+
+    </script>
+
+    <input id="check">
+    <button onclick="checkUP()">ckick here</button>
+    <p id="old"></p>
+
+    <script>
+        function checkUP(){
+            let age = document.getElementById("check").value
+            let checkIn = (age < 18)? "not passed": "passed";
+            document.getElementById("old").innerHTML = checkIn;
+        }
+    </script>
+
+    <p>Input your age and click the button:</p>
+
+    <input id="age" value="18" />
+
+    <button onclick="document.getElementById('imyaka').innerHTML = myFunction()">Try it</button>
+
+    <p id="imyaka"></p>
+
+    <script>
+        function myFunction() {
+            let voteable;
+            let age = Number(document.getElementById("age").value);
+            if (isNaN(age)) {
+                voteable = "Input is not a number";
+            } else {
+                voteable = (age < 18) ? "Too young" : "Old enough";
+            }
+            return voteable;
+            }
+    </script>
+
+    <button onclick="myLinkage()">Tap here</button>
+    <p id="linkage"></p>
+
+    <script>
+        function myLinkage(){
+            let linkage1 = "www.w3school.com";
+            let linkage2 = "www.worldwidewild.com";
+            let linkage3 = "undefined";
+
+            const linka = ["www.w3school.com","www.worldwidewild.com","undefined"];
+            if(Math.random() < 0.5){
+                //document.getElementById("linkage").innerHTML = linkage1;
+                document.getElementById("linkage").innerHTML = linka[0];
+            }else if (Math.random){
+                //document.getElementById("linkage").innerHTML = linkage2;
+                document.getElementById("linkage").innerHTML = linka[1];
+
+            }else{
+                //document.getElementById("linkage").innerHTML = linkage3;
+                document.getElementById("linkage").innerHTML = linka[2];
+
+            }
+        }
+    </script>
+
+
+    <h1 style="color: blue; text-decoration: underline;">FOR LOOP</h1>
+
+    <button onclick="document.getElementById('forloopp').innerHTML=myForLoop()">Loop Here</button>
+    <p id="forloopp" style="text-decoration: underline;"></p>
+
+    <script>
+        
+        function myForLoop (){
+            const forLoop = ["BCS", "BSE", "BIT", "DCS", "DSE", "DIT"];
+            let myloo = "";
+            for (let i = 0; i < forLoop.length; i++) {
+                myloo += "1." + forLoop[i] + "<br>" ;  
+            }
+            return myloo;
+        }
+    </script>
+
+    <p id="forIn"></p>
+
+    <script>
+    const person = {fname:"John", lname:"Doe", age:25}; 
+    let txta = "";
+    for (let x in person) {
+        txta += person[x] + " ";
+        }
+
+    document.getElementById("forIn").innerHTML = txta;
+    </script>
+
+<h2 style="text-decoration: underline; color: blue;">For Of Loop</h2>
+
+<p id="forOf"></p>
+
+<script>
+    const forOf = [40, 60, 70, 10, 100];
+    let absorber = "";
+    for (const x of forOf) {
+        absorber += x + "<br>"
+    }
+    document.getElementById("forOf").innerHTML = absorber;
+</script>
+
+<h2 style="text-decoration: underline; color: blue;">JavaScript While Loop</h2>
+
+<p id ="while1"></p><p id="while"></p>
+
+<script>
+    let text = "";
+    let textel = "";
+    let i = 0;
+    let a = 1;
+    while (i < 10) {
+        text += "<br>The number is " + i;
+        i++;
+    }
+    while (a < 11){
+        textel += a + "<br>";
+        a++;
+    }
+    document.getElementById("while").innerHTML = text;
+    document.getElementById("while1").innerHTML = textel;
+
+</script>
+
+</html>
